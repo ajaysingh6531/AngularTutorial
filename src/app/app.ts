@@ -9,4 +9,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('angular-19-tut');
+  title1='Ajay Bro';
+  x=10;
+  y=20;
+  // hello(){
+  //   let x=20;
+  // }
+
 }
