@@ -64,4 +64,22 @@ export class App {
       this.count=0;
     }
   }
+
+  handleEvent(ev:MouseEvent){
+    console.log("function called",ev);
+    console.log("function called",ev.type);
+    //console.log("function called",ev.target.name); if you put ev:any this console will work
+    console.log("function called",(ev.target as Element).className);
+    
+
+  }
+   handleEvent_1(ev:Event){
+    //console.log("function called",ev);
+    console.log("function called",ev.type);
+    console.log("value",(ev.target as HTMLInputElement).value)
+    //console.log("function called",ev.target.name); if you put ev:any this console will work
+    //console.log("function called",(ev.target as Element).className);
+    
+
+  }
 }
