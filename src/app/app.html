@@ -11,3 +11,16 @@
 
 <button (click)="handleClickEvent()">Click me</button>
 <button (click)="sum(10,20)">Click sum</button>
+<p>{{name}}</p>
+<p>{{k}}</p>
+
+<h1>counter app</h1>
+<div style="text-align: center;">   
+    <h2 class ="count">{{count}}</h2>
+    <div>
+        <button (click)="handleIncrement()" class= "btn bg-green">Increment</button>
+        <button (click) ="handleCounter('minus')" class= "btn bg-red">Decrement</button>
+        <button (click)="handleReset()" class= "btn bg-black">Reset</button>
+    </div>
+    
+</div>

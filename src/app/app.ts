@@ -15,12 +15,14 @@ export class App {
   title1='Ajay Bro';
   x=10;
   y=20;
+   k: number | null = null;
   // hello(){
   //   let x=20;
   // }
 
   handleClickEvent() {
     alert('Button clicked!');
+    this.k = this.x + this.y;
     //this.handleClickEvent2();
   } 
   handleClickEvent2() {
@@ -39,5 +41,27 @@ export class App {
   sum(x:number,y:number){
     console.log(x+y);
     //return x+y;
+  }
+  count:number=0; //count=0;
+  handleIncrement(){
+    this.count++;
+  }
+  handleDecrement(){
+    this.count--;
+  } 
+  handleReset(){
+    this.count=0;
+  }
+
+  handleCounter(val:string){
+    if(val==='plus'){
+      this.count++;
+    } 
+    else if(val==='minus'){
+      this.count--;
+    }
+    else if(val==='reset'){
+      this.count=0;
+    }
   }
 }
