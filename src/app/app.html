@@ -1,3 +1,7 @@
+<!-- <nav class="navbar">
+    <a routerLink="login">Login</a>
+    <a routerLink="profile"> Profile</a>
+</nav>     -->
 <h1>Hello angular 19</h1>
 <h2>{{title1}}</h2>
 <h2>{{2+2}}</h2>
@@ -8,7 +12,19 @@
 <app-login></app-login>
 <app-signup></app-signup>
 <app-profile></app-profile>
-
+<h3>Basic Routing</h3>
+<ul>
+    <li>
+        <a routerLink="login">Login</a>
+    </li>
+   
+      <li>
+        <a routerLink="profile">Profile</a>
+    </li>
+     <li>
+        <a routerLink="signup">SignUp</a>
+    </li>
+</ul>
 <button (click)="handleClickEvent()">Click me</button>
 <button (click)="sum(10,20)">Click sum</button>
 <p>{{name}}</p>
@@ -63,3 +79,24 @@ name="user">
 
 <button (click)="getEmail(emailField.value)">Get email</button>
 <button (click)="setEmail()">Set email</button>
+
+
+
+
+
+<h1>If ELSE control flow</h1>
+<button (click) ="hidediv()">Hide div</button>
+<button (click) ="unhidediv()">Un Hide div</button>
+<button (click) ="togglediv()">toggle div</button>
+<button (click) ="togglediv()">{{display?'show red div': 'show gold div'}}</button>
+@if(display){
+<div style="width: 100px; height: 100px;background-color: aqua;"></div>
+}
+@else{
+    <div style="width: 100px; height: 100px;background-color: red;"></div>
+}
+<!-- remove else if you want to remove div  -->
+<!-- @if(x>=10){
+<div style="width: 100px; height: 100px;background-color: aqua;"></div>
+} -->
+<router-outlet/>

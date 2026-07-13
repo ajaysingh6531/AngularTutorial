@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet ,RouterLinkActive} from '@angular/router';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { Profile } from './profile/profile';
 
 @Component({
   selector: 'app-root',
-  imports: [Login,Signup,Profile,RouterOutlet],
+  imports: [Login,Signup,Profile,RouterOutlet,RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -104,6 +104,18 @@ email="";
   }
   setEmail(){
     this.email="defaultl@.com"
+  }
+
+  display=true;
+
+  hidediv(){
+    this.display=false;
+  }
+  unhidediv(){
+    this.display=true;
+  }
+  togglediv(){
+    this.display=!this.display
   }
 
 
