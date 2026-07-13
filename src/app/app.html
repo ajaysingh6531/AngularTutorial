@@ -47,3 +47,19 @@ style="background-color: black; width: 50px; height: 50px;"></div>
     (input)="handleEvent_1($event)"
     //(blur)="handleEvent_1($event)"
 name="user">
+
+<h1>Get and Set Input Field</h1>
+<h1>User Name is : {{displayname}}</h1>
+<input type="text" placeholder="Enter user name" (input)="getName($event)" value="{{name1}}">
+<br>
+<br>
+<button (click)="showname()">Get value</button>
+<button (click)="setname()">Set Name</button>
+
+<hr>
+<br>
+<h5>Email is {{email}}</h5>
+<input type="text" value ="{{email}}"placeholder="Enter email" #emailField>
+
+<button (click)="getEmail(emailField.value)">Get email</button>
+<button (click)="setEmail()">Set email</button>

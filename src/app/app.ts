@@ -82,4 +82,29 @@ export class App {
     
 
   }
+  name1="";
+  displayname="";
+  getName(ev:Event){
+    //console.log(ev)
+    const value=(ev.target as HTMLInputElement).value
+    this.name1=value;
+  }
+  showname(){
+    this.displayname=this.name1;
+  }
+  setname(){
+    this.name1="saurav"
+  }
+
+email="";
+  getEmail(val:string){
+
+    //console.log(val);
+    this.email=val
+  }
+  setEmail(){
+    this.email="defaultl@.com"
+  }
+
+
 }
