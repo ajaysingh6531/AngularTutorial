@@ -118,5 +118,32 @@ email="";
     this.display=!this.display
   }
 
+  color=4;
+  handlecolor(val:number){
+    this.color=val;
+  }
+  handleInput(ev:Event){
+    this.color=parseInt((ev.target as HTMLInputElement).value);
+  }
 
+  color1='yellow';
+
+  handle_color(val:string){
+    this.color1=val;
+  }
+  handle_Input(ev:Event){
+    this.color1=((ev.target as HTMLInputElement).value);
+  }
+  users=["ajay","sam","tonny","bruce"]
+  student=[
+    {name:'anil',age:20,email:'a@gmail.com'},
+    {name:'avah',age:22,email:'b@gmail.com'},
+    {name:'ansh',age:24,email:'c@gmail.com'}
+
+  ]
+
+  naming="";
+  get_Name(n:string){
+    this.naming=n;
+  }
 }

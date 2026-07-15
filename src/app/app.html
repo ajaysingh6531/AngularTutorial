@@ -99,4 +99,71 @@ name="user">
 <!-- @if(x>=10){
 <div style="width: 100px; height: 100px;background-color: aqua;"></div>
 } -->
+
+
+<!-- else if is for multiple conditions -->
+<h1>else if control flow</h1>
+@if(color==1){
+    <div style="background-color: red; width: 100px; height: 100px;"></div>
+}
+@else if (color==2){
+    <div style="background-color: blue; width: 100px; height: 100px;"></div>
+}
+@else if(color==3){
+    <div style="background-color: black; width: 100px; height: 100px;"></div>
+}
+@else{
+    <div style="background-color: green; width: 100px; height: 100px;"></div>
+}
+<br>
+<button (click)="handlecolor(1)">Red</button>
+<button (click)="handlecolor(2)"> Blue</button>
+<button (click)="handlecolor(3)">Black</button>
+<button (click)="handlecolor(4)">Green</button>
+<br>
+<input type="text" (input)="handleInput($event)" placeholder="enter color number">
+<br>
+<br>
+<br>
+<h1>Switch case control flow</h1>
+
+<button (click)="handle_color('red')">button click for red</button>
+<button (click)="handle_color('yellow')">button click for yellow</button>
+<button (click)="handle_color('gold')">button click for gold</button>
+
+@switch(color1){
+    @case('red'){
+        <h5 style="background-color: red;">red color</h5>
+    }
+    @case('green'){
+        <h5 style="background-color: green;">green color</h5>
+    }
+    @case('yellow'){
+        <h5 style="background-color: yellow;">yellow color</h5>
+    }
+    @default{
+        <h5 style="background-color: skyblue;">NO color match</h5>
+    }
+}
+<br>
+<input type="text" (input)="handle_Input($event)" placeholder="enter color ">
+<br>
+<h1>For Loop</h1>
+
+<h5>{{users[0]}}</h5>
+
+@for(u of users; track u){
+    <h5>{{u}}</h5>
+}
+@for(s of student; track s.name){
+    <h5>
+        <span>{{s.name}}</span>
+        <span>{{s.age}}</span>
+        <span>{{s.email}}</span>
+        <button (click)="get_Name(s.name)">Get Name</button>
+        
+
+    </h5>
+}
+{{naming}}
 <router-outlet/>
