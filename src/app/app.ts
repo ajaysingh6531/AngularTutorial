@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal,Signal } from '@angular/core';
 import { RouterLink, RouterOutlet ,RouterLinkActive} from '@angular/router';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
@@ -172,5 +172,42 @@ email="";
     }
 
   }
+  data=signal<number | string>(10) //can store both number and string
+  //both are same
+  //data1: WritableSignal<number |string>=signal(10); 
+  data1:Signal<number>=computed(()=>200);
+
+  updatesignal(){
+    this.data.set("hello");
+    //this.data1.set("hey"); this cant be updated because its computed signal work as final
+  }
+
+  // i=10;
+  // j=20;
+  // z=this.i+this.j;
+
+  // showValue(){
+
+  //   console.log(this.z);
+  //   this.i=100;
+  //   console.log(this.z);
+  // }
+  //output will be 30 in both console but you want that w
+  // hen ever  any value update in middle this z get update with latest values use computed
+
+
+  i=signal(10); // these are writebale signal
+  j=signal(20);
+  z=computed(()=>this.i()+this.j()) //computed signal dont update as they are read only but if dependecy change its value get update
+
+  showValue(){
+
+    console.log(this.z());
+    this.i.set(100);
+    console.log(this.z());
+    //this.z.set(300);  wont work as z is final | const
+  }
+
+
 
 }
