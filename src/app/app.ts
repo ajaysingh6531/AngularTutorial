@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterLink, RouterOutlet ,RouterLinkActive} from '@angular/router';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
@@ -146,4 +146,31 @@ email="";
   get_Name(n:string){
     this.naming=n;
   }
+  counter=signal(10);
+
+  constructor(){
+    effect(()=>{
+      //console.log(this.x);
+      console.log(this.counter());
+    })
+  }
+  // updateValue(){
+  //   //this.x=30;
+  //   // this.counter.set(100);
+  //   this.counter.set(this.counter()+1);
+
+  // }
+    updateValue(val:string){
+    //this.x=30;
+    // this.counter.set(100);
+    //this.counter.set(this.counter()+1);
+    if(val=='inc'){
+      this.counter.set(this.counter()+1);
+    }
+    else{
+      this.counter.set(this.counter()-1);
+    }
+
+  }
+
 }

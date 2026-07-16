@@ -166,4 +166,17 @@ name="user">
     </h5>
 }
 {{naming}}
+
+<br>
+<br>
+<h1>Basic of signals</h1>
+<h5>{{counter()}}</h5>
+<h5>{{x}}</h5>
+
+<button (click)="counter.set(100)">Incresease Value</button>
+
+<button (click)="updateValue('inc')">inc Value</button>
+
+<button (click)="updateValue('desc')">dec Value</button>
+
 <router-outlet/>
