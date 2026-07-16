@@ -148,10 +148,22 @@ email="";
   }
   counter=signal(10);
 
+  // effect will be called every time if there any change in signal
   constructor(){
     effect(()=>{
       //console.log(this.x);
       console.log(this.counter());
+      console.log(this.username());
+
+      if(this.count3()%3==0){
+        this.displayheading.set(true);
+        setTimeout(()=>{
+          this.displayheading.set(false);
+        },2000)
+      }
+      else{
+        this.displayheading.set(false);
+      }
     })
   }
   // updateValue(){
@@ -207,6 +219,22 @@ email="";
     console.log(this.z());
     //this.z.set(300);  wont work as z is final | const
   }
+
+  username=signal('Ajay');
+
+  count3=signal(2);
+  displayheading=signal(true);
+
+  updateusername(){
+    this.username.set('hey singh');
+  }
+
+  togglevalue(){
+    //this.displayheading=!this.displayheading
+    this.count3.set(this.count3()+1);
+  }
+
+
 
 
 

@@ -188,6 +188,21 @@ name="user">
 
 <br>
 <button (click)="showValue()">update-1</button>
+<br>
+<br>
+{{username()}}
+<button (click)="username.set('singh')">update-username</button>
+<button (click)="updateusername()">update-username-1</button>
+
+
+<br>
+<h1>effect</h1>
+<button (click)="togglevalue()">Toggle value </button>
+<br>
+{{count3()}}
+@if(displayheading()){
+<h3 style="background-color: green;">page heading</h3>
+}
 
 
 <router-outlet/>
