@@ -203,6 +203,48 @@ name="user">
 @if(displayheading()){
 <h3 style="background-color: green;">page heading</h3>
 }
+<br>
+<br>
+<h1>For loop contextual variables</h1>
+
+@for(s of student1;track s; let i=$index){
+    <!-- <h5>thos is our {{$index}} user and name is {{s}}</h5> -->
+     
+     <!-- <h5>this is our {{i}} user and name is {{s}}</h5> -->
+
+     @if($first){
+        <h5 style="background-color: red;">this is our {{i}} user and name is {{s}}</h5>
+     }
+     @else if ($last){
+        <h5 style="background-color: green;">this is our {{i}} user and name is {{s}}</h5>
+     }
+     
+     @else{
+        <h5 style="background-color: blue;">this is our {{i}} user and name is {{s}}</h5>
+     }
+     
+}
+<h3>Odd Even</h3>
+@for(s of student1;track s; let i=$index){
+    @if($odd){
+        <h5 style="background-color: purple;">this is our {{i}} user and name is {{s}}</h5>
+     }
+     @else if ($even){
+        <h5 style="background-color: skyblue;">this is our {{i}} user and name is {{s}}</h5>
+     }
+     <h5>{{$count}}</h5>
+}
+<!-- empty work with for -->
+@for(s of student2;track s; let i=$index){
+    <h5>{{s}}</h5>
+}@empty{
+    <h3>no record</h3>
+}
+@if(student2.length==0){
+    <h1>no record found</h1>
+}
+
+
 
 
 <router-outlet/>

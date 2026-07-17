@@ -234,8 +234,9 @@ email="";
     this.count3.set(this.count3()+1);
   }
 
+student1=['Ajay','singh','sam','praveen','gaurav'];
 
-
+student2=[];
 
 
 }
