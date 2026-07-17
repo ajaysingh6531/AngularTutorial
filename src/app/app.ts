@@ -3,10 +3,12 @@ import { RouterLink, RouterOutlet ,RouterLinkActive} from '@angular/router';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { Profile } from './profile/profile';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
-  imports: [Login,Signup,Profile,RouterOutlet,RouterLink],
+  imports: [Login,Signup,Profile,RouterOutlet,RouterLink,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -238,5 +240,21 @@ student1=['Ajay','singh','sam','praveen','gaurav'];
 
 student2=[];
 
+name3="";
 
+task="";
+index=0;
+taskList:{id: number,task:string}[]=[];
+  addtask(){
+  this.taskList.push(
+    {id:this.index+1,task:this.task}
+    
+  )
+  this.index=this.index+1;
+  this.task=''; //with this after click button from input field entry get vanish.
+  }
+    deletetask(n:number){
+      this.taskList=this.taskList.filter((i)=>i.id!=n)
+
+    }
 }

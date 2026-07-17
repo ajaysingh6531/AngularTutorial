@@ -241,10 +241,22 @@ name="user">
     <h3>no record</h3>
 }
 @if(student2.length==0){
-    <h1>no record found</h1>
+    <h2>no record found</h2>
 }
 
+<h1>Two way Binding</h1>
+<input [(ngModel)]="name3" type="text" placeholder="user-name">
+<h2>{{name3}}</h2>
 
+<h1>TO DO LIST:--></h1>
+<input [(ngModel)]="task" type="text"  placeholder="enter task">
+<button (click)="addtask()">Add Task</button>
 
-
+@for(t of taskList;track t.id){
+    <ul style="display: flex;justify-content: space-between;list-style-type: none;">
+        <li>{{t.id}}</li>
+        <li>{{t.task}}</li>
+        <li><button (click)="deletetask(t.id)">delete</button></li>
+    </ul>
+}
 <router-outlet/>
