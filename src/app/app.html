@@ -264,4 +264,37 @@ name="user">
 <h2 [style.backgroundColor]="bgcolor" [style.fontSize]="fontsize">dynamic Styling:-</h2>
 <h2 [style.backgroundColor]="zoom ? bgcolor:bgcolor1" >dynamooo:-</h2>
 <button (click)="updateColor()">Toggle color</button>
+<h1 *ngIf="show">Hello</h1>
+
+<h1>ngfor directive</h1>
+<ul>
+    <li *ngFor="let x of stu">{{x}}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let x of studentdata">{{x.name}},{{x.age}},{{x.email}}</li>
+</ul>
+
+<div *ngIf="login; else elseBlock">
+    <a href="">logout</a>
+</div>
+<ng-template #elseBlock>
+    <a href="">login</a>
+</ng-template>
+
+<div *ngIf="block==0">
+    <h1>Hello-0</h1>
+</div>
+
+<div *ngIf="block==1">
+    <h1>Hello-1</h1>
+</div>
+
+<div *ngIf="block==2">
+    <h1>Hello-2</h1>
+</div>
+<button (click)="updateBlock()">update Block</button>
+
+
+
 <router-outlet/>

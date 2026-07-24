@@ -4,11 +4,12 @@ import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { Profile } from './profile/profile';
 import { FormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
-  imports: [Login,Signup,Profile,RouterOutlet,RouterLink,FormsModule],
+  imports: [Login,Signup,Profile,RouterOutlet,RouterLink,FormsModule,NgIf,NgFor],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -266,5 +267,31 @@ taskList:{id: number,task:string}[]=[];
   updateColor(){
     console.log("button clicked");
     this.zoom=!this.zoom;
+  }
+  show=true;
+
+  stu=['ajay','singh','gaurav','deepu'];
+  studentdata=[
+    {
+      name:'ajay',
+      age:'29',
+      email:'mail.com'
+    },
+    {
+      name:'singh',
+      age:'30',
+      email:'eail.com'
+    },
+    {
+      name:'gaurav',
+      age:'39',
+      email:'mailzs.com'
+    }
+  ]
+  login=true;
+  block=0;
+
+  updateBlock(){
+    this.block++;
   }
 }
