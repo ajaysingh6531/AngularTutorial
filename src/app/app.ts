@@ -257,4 +257,14 @@ taskList:{id: number,task:string}[]=[];
       this.taskList=this.taskList.filter((i)=>i.id!=n)
 
     }
+
+  bgcolor="red";  
+  fontsize="80px";
+  bgcolor1="green";
+  zoom=false;
+
+  updateColor(){
+    console.log("button clicked");
+    this.zoom=!this.zoom;
+  }
 }

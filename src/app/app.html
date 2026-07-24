@@ -259,4 +259,9 @@ name="user">
         <li><button (click)="deletetask(t.id)">delete</button></li>
     </ul>
 }
+
+<h1>dynamic Styling:-</h1>
+<h2 [style.backgroundColor]="bgcolor" [style.fontSize]="fontsize">dynamic Styling:-</h2>
+<h2 [style.backgroundColor]="zoom ? bgcolor:bgcolor1" >dynamooo:-</h2>
+<button (click)="updateColor()">Toggle color</button>
 <router-outlet/>
