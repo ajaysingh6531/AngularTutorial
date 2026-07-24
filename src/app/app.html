@@ -295,6 +295,21 @@ name="user">
 </div>
 <button (click)="updateBlock()">update Block</button>
 
+<h1>ng Switch</h1>
+
+<div [ngSwitch]="color3">
+    <h3 *ngSwitchCase="'red'" style="background-color: red;">Red Color</h3>
+    <h3 *ngSwitchCase="'blue'" style="background-color: blue;">Blue Color</h3>
+    <h3 *ngSwitchCase="'green'" style="background-color: green;">Green Color</h3>
+    <h3 *ngSwitchCase="'yellow'" style="background-color: Yellow;">Yellow Color</h3>
+    <h3 *ngSwitchDefault>No Color</h3>
+</div>
+
+
+<button (click)="changeColor2('red')"> change color</button>
+<button (click)="changeColor2('green')"> change green</button>
+<button (click)="changeColor2('yellow')"> change yellow</button>
+<button (click)="changeColor2('blue')"> change blue</button>
 
 
 <router-outlet/>

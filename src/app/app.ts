@@ -4,12 +4,12 @@ import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { Profile } from './profile/profile';
 import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
-  imports: [Login,Signup,Profile,RouterOutlet,RouterLink,FormsModule,NgIf,NgFor],
+  imports: [Login,Signup,Profile,RouterOutlet,RouterLink,FormsModule,NgIf,NgFor,NgSwitch,NgSwitchCase,NgSwitchDefault],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -293,5 +293,11 @@ taskList:{id: number,task:string}[]=[];
 
   updateBlock(){
     this.block++;
+  }
+
+  color3="pink";
+
+  changeColor2(c:string){
+    this.color3=c;
   }
 }
